@@ -4,23 +4,224 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TalentFactory_Backend.DataAccess.Services;
+using TalentFactory_CMS.Models;
 
 namespace TalentFactory_Backend.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        private IContentService contentService = null;
+        // private NominatieService nominatieService;
+
+        public ValuesController() {}
+        public ValuesController(IContentService contentService) {
+            this.contentService = contentService;
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        // GET api/values
+        [Route("api/home")]
+        [HttpGet]
+        public HttpResponseMessage GetHome()
         {
-            return "value";
+            HttpResponseMessage message = null;
+
+            try
+            {
+                Home h = contentService.GetHomeData();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<Home>(h, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
         }
+
+        [Route("api/nieuws")]
+        [HttpGet]
+        public HttpResponseMessage GetNieuws(int iStartIndex, int iAantal)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<NieuwsItem> lNieuws = contentService.GetNieuwsItems(iStartIndex, iAantal);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<NieuwsItem>>(lNieuws, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/nieuwsItem")]
+        [HttpGet]
+        public HttpResponseMessage GetNieuwsItem(int nieuwsItemId)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                NieuwsItem nieuwsItem = contentService.GetNieuwsItemById(nieuwsItemId);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<NieuwsItem>(nieuwsItem, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/sponsors")]
+        [HttpGet]
+        public HttpResponseMessage GetSponsors(int typeId)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Sponsor> lSponsors = contentService.GetSponsorsByType(typeId);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Sponsor>>(lSponsors, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/media")]
+        [HttpGet]
+        public HttpResponseMessage GetMedia()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<FlickrAlbum> lFlickr = contentService.GetFlickrAlbums();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<FlickrAlbum>>(lFlickr, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/halloffame")]
+        [HttpGet]
+        public HttpResponseMessage GetHallOfFame()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<HallOfFame> lHallOfFame = contentService.GetHallOfFameElements();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<HallOfFame>>(lHallOfFame, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/contact")]
+        [HttpGet]
+        public HttpResponseMessage GetContact()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                Contact contact = contentService.GetContact();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<Contact>(contact, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/awards")]
+        [HttpGet]
+        public HttpResponseMessage GetAwards()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Award> lAwards = contentService.GetAwards();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Award>>(lAwards, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/nominaties")]
+        [HttpGet]
+        public HttpResponseMessage GetNominaties(int awardId)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(awardId);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Nominatie>>(lNominaties, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/nominaties")]
+        [HttpGet]
+        public HttpResponseMessage GetNominaties(int awardId, int startIndex, int iAantal)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(awardId, startIndex, iAantal);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Nominatie>>(lNominaties, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        /*
 
         // POST api/values
         public void Post([FromBody]string value)
@@ -35,6 +236,6 @@ namespace TalentFactory_Backend.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-        }
+        }*/
     }
 }

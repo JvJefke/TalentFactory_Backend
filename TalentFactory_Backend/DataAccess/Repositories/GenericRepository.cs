@@ -1,12 +1,12 @@
 ﻿
-using TalenFactory_Backend.DataAccess.Context;
+using TalentFactory_Backend.DataAccess.Context;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace TalenFactory_Backend.DataAccess.Repositories {
+namespace TalentFactory_Backend.DataAccess.Repositories {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class {
 
         internal TFContext context;

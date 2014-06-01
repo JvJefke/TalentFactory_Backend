@@ -13,7 +13,7 @@ namespace TalentFactory_Backend.Tests.Controllers
     [TestClass]
     public class ValuesControllerTest
     {
-        [TestMethod]
+        /*[TestMethod]
         public void Get()
         {
             // Arrange
@@ -76,6 +76,7 @@ namespace TalentFactory_Backend.Tests.Controllers
             controller.Delete(5);
 
             // Assert
-        }
+        }*/
+        
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TalenFactory_Backend.DataAccess.Repositories
+namespace TalentFactory_Backend.DataAccess.Repositories
 {
 
     public interface IGenericRepository<TEntity>

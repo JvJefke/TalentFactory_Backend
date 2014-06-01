@@ -113,6 +113,9 @@
     <Reference Include="Unity.Mvc5">
       <HintPath>..\packages\Unity.Mvc5.1.1\lib\net45\Unity.Mvc5.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.5.1\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -199,9 +202,26 @@
     <Compile Include="DataAccess\Context\TFContext.cs" />
     <Compile Include="DataAccess\Repositories\GenericRepository.cs" />
     <Compile Include="DataAccess\Repositories\IGenericRepository.cs" />
+    <Compile Include="DataAccess\Repositories\INieuwsItemRepository.cs" />
+    <Compile Include="DataAccess\Repositories\INominatieRepository.cs" />
+    <Compile Include="DataAccess\Repositories\ISponsorRepository.cs" />
+    <Compile Include="DataAccess\Repositories\NieuwsItemRepository.cs" />
+    <Compile Include="DataAccess\Repositories\NominatieRepository.cs" />
+    <Compile Include="DataAccess\Repositories\SponsorRepository.cs" />
+    <Compile Include="DataAccess\Services\CMSService.cs" />
+    <Compile Include="DataAccess\Services\ContentService.cs" />
+    <Compile Include="DataAccess\Services\IContentService.cs" />
+    <Compile Include="DataAccess\Services\NominatieService.cs" />
+    <Compile Include="DataAccess\UOW\IUOW.cs" />
+    <Compile Include="DataAccess\UOW\UOW.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405312144231_TFContextInit.cs" />
+    <Compile Include="Migrations\201405312144231_TFContextInit.Designer.cs">
+      <DependentUpon>201405312144231_TFContextInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Award.cs" />
@@ -220,6 +240,11 @@
     <Compile Include="Models\SponsorType.cs" />
     <Compile Include="Models\TwitterFeed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
@@ -245,6 +270,10 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Web.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -274,8 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataAccess\Services\" />
-    <Folder Include="DataAccess\UOW\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -283,6 +311,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201405312144231_TFContextInit.resx">
+      <DependentUpon>201405312144231_TFContextInit.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
