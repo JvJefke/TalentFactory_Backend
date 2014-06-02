@@ -56,6 +56,16 @@ namespace TalentFactory_Backend.DataAccess.Services
             return repoNieuwsItem.GetNieuwsItems(startIndex, startIndex + iAantal);
         }
 
+        public List<NieuwsItem> GetNieuwsItems()
+        {
+            return repoNieuwsItem.All().ToList<NieuwsItem>();
+        }
+
+        public List<Sponsor> GetSponsors()
+        {
+            return repoSponsor.All().ToList<Sponsor>();
+        }
+
         public List<Sponsor> GetSponsorsByType(int typeId)
         {
             return repoSponsor.GetSponsorByType(typeId);

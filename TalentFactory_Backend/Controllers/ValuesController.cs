@@ -61,15 +61,35 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
-        [Route("api/nieuwsItem")]
+        [Route("api/nieuws")]
         [HttpGet]
-        public HttpResponseMessage GetNieuwsItem(int nieuwsItemId)
+        public HttpResponseMessage GetNieuws()
         {
             HttpResponseMessage message = null;
 
             try
             {
-                NieuwsItem nieuwsItem = contentService.GetNieuwsItemById(nieuwsItemId);
+                List<NieuwsItem> lNieuws = contentService.GetNieuwsItems();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<NieuwsItem>>(lNieuws, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/nieuwsItem")]
+        [HttpGet]
+        public HttpResponseMessage GetNieuwsItem(int id)
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                NieuwsItem nieuwsItem = contentService.GetNieuwsItemById(id);
                 message = new HttpResponseMessage(HttpStatusCode.OK);
                 message.Content = new ObjectContent<NieuwsItem>(nieuwsItem, Configuration.Formatters[0], "application/json");
             }
@@ -83,13 +103,33 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/sponsors")]
         [HttpGet]
-        public HttpResponseMessage GetSponsors(int typeId)
+        public HttpResponseMessage GetSponsors(int id)
         {
             HttpResponseMessage message = null;
 
             try
             {
-                List<Sponsor> lSponsors = contentService.GetSponsorsByType(typeId);
+                List<Sponsor> lSponsors = contentService.GetSponsorsByType(id);
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Sponsor>>(lSponsors, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/sponsors")]
+        [HttpGet]
+        public HttpResponseMessage GetSponsors()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Sponsor> lSponsors = contentService.GetSponsors();
                 message = new HttpResponseMessage(HttpStatusCode.OK);
                 message.Content = new ObjectContent<List<Sponsor>>(lSponsors, Configuration.Formatters[0], "application/json");
             }
@@ -183,13 +223,13 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/nominaties")]
         [HttpGet]
-        public HttpResponseMessage GetNominaties(int awardId)
+        public HttpResponseMessage GetNominaties(int id)
         {
             HttpResponseMessage message = null;
 
             try
             {
-                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(awardId);
+                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(id);
                 message = new HttpResponseMessage(HttpStatusCode.OK);
                 message.Content = new ObjectContent<List<Nominatie>>(lNominaties, Configuration.Formatters[0], "application/json");
             }
@@ -203,13 +243,13 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/nominaties")]
         [HttpGet]
-        public HttpResponseMessage GetNominaties(int awardId, int startIndex, int iAantal)
+        public HttpResponseMessage GetNominaties(int id, int startIndex, int iAantal)
         {
             HttpResponseMessage message = null;
 
             try
             {
-                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(awardId, startIndex, iAantal);
+                List<Nominatie> lNominaties = contentService.GetNominatiesByAward(id, startIndex, iAantal);
                 message = new HttpResponseMessage(HttpStatusCode.OK);
                 message.Content = new ObjectContent<List<Nominatie>>(lNominaties, Configuration.Formatters[0], "application/json");
             }

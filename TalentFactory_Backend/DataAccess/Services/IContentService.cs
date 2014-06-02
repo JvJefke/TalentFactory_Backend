@@ -9,6 +9,8 @@ namespace TalentFactory_Backend.DataAccess.Services
     {
         Home GetHomeData();
         List<NieuwsItem> GetNieuwsItems(int startIndex, int iAantal);
+        List<NieuwsItem> GetNieuwsItems();
+        List<Sponsor> GetSponsors();
         List<Sponsor> GetSponsorsByType(int typeId);
         NieuwsItem GetNieuwsItemById(int nieuwsItemId);
         List<FlickrAlbum> GetFlickrAlbums();
