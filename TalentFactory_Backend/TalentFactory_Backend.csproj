@@ -271,6 +271,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Web.config" />
+    <None Include="Properties\PublishProfiles\talentfactory - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\talentfactory - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -304,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Dlls\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
