@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace TalentFactory_CMS.Models
+namespace TalentFactory_Backend.Models
 {
     public class HallOfFame
     {

@@ -4,7 +4,7 @@ using Unity.Mvc5;
 using System.Data.Entity;
 using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.DataAccess.Repositories;
-using TalentFactory_CMS.Models;
+using TalentFactory_Backend.Models;
 using System.Web.Http;
 using TalentFactory_Backend.DataAccess.UOW;
 using TalentFactory_Backend.DataAccess.Services;

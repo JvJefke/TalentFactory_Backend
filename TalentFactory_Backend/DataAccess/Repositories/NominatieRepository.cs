@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TalentFactory_Backend.DataAccess.Context;
-using TalentFactory_CMS.Models;
+using TalentFactory_Backend.Models;
 
 namespace TalentFactory_Backend.DataAccess.Repositories
 {

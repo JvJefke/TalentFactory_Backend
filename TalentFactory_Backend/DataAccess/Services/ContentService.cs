@@ -5,7 +5,7 @@ using System.Web;
 using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.DataAccess.Repositories;
 using TalentFactory_Backend.DataAccess.UOW;
-using TalentFactory_CMS.Models;
+using TalentFactory_Backend.Models;
 
 namespace TalentFactory_Backend.DataAccess.Services
 {

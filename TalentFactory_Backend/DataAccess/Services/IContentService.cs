@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.DataAccess.Repositories;
-using TalentFactory_CMS.Models;
+using TalentFactory_Backend.Models;
 namespace TalentFactory_Backend.DataAccess.Services
 {
     public interface IContentService

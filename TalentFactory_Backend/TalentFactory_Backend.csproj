@@ -217,15 +217,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405312144231_TFContextInit.cs" />
-    <Compile Include="Migrations\201405312144231_TFContextInit.Designer.cs">
-      <DependentUpon>201405312144231_TFContextInit.cs</DependentUpon>
+    <Compile Include="Migrations\201406020828435_TFContextInit.cs" />
+    <Compile Include="Migrations\201406020828435_TFContextInit.Designer.cs">
+      <DependentUpon>201406020828435_TFContextInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Engines\NominatieEngine.cs" />
     <Compile Include="Models\FlickrAlbum.cs" />
     <Compile Include="Models\HallOfFame.cs" />
     <Compile Include="Models\Home.cs" />
@@ -313,8 +314,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201405312144231_TFContextInit.resx">
-      <DependentUpon>201405312144231_TFContextInit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201406020828435_TFContextInit.resx">
+      <DependentUpon>201406020828435_TFContextInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

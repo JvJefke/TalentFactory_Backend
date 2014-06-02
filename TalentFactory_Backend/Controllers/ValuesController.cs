@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using TalentFactory_Backend.DataAccess.Services;
-using TalentFactory_CMS.Models;
+using TalentFactory_Backend.Models;
 
 namespace TalentFactory_Backend.Controllers
 {
@@ -219,6 +219,13 @@ namespace TalentFactory_Backend.Controllers
             }
 
             return message;
+        }
+
+        [Route("api/nominaties")]
+        [HttpPost]
+        public void Post(List<JuryKeuze> juryKeuzes)
+        {
+
         }
 
         /*

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace TalentFactory_CMS.Models
+namespace TalentFactory_Backend.Models
 {
     public class JuryKeuze
     {
@@ -18,6 +18,5 @@ namespace TalentFactory_CMS.Models
         [Column(Order = 1)]
         public int JuryLidId { get; set; }
         public virtual JuryLid JuryLid { get; set; }
-
     }
 }
