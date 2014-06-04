@@ -15,7 +15,6 @@ namespace TalentFactory_Backend.DataAccess.Repositories
         TEntity GetByID(object id);
         TEntity Insert(TEntity entity);
         void Update(TEntity entityToUpdate);
-
-    }
+      }
 
 }

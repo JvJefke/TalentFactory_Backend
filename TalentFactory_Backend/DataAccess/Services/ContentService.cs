@@ -63,7 +63,7 @@ namespace TalentFactory_Backend.DataAccess.Services
 
         public List<Sponsor> GetSponsors()
         {
-            return repoSponsor.All().ToList<Sponsor>();
+            return repoSponsor.GetAlleSponsorsMetInclude();
         }
 
         public List<Sponsor> GetSponsorsByType(int typeId)

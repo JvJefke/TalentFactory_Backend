@@ -8,5 +8,6 @@ namespace TalentFactory_Backend.DataAccess.Repositories
         System.Collections.Generic.List<TalentFactory_Backend.Models.Sponsor> GetSponsorByType(int id, int iAantal);
         System.Collections.Generic.List<TalentFactory_Backend.Models.Sponsor> GetSponsorByType(TalentFactory_Backend.Models.SponsorType type);
         System.Collections.Generic.List<TalentFactory_Backend.Models.Sponsor> GetSponsorByType(TalentFactory_Backend.Models.SponsorType type, int iAantal);
+        System.Collections.Generic.List<Sponsor> GetAlleSponsorsMetInclude();
     }
 }

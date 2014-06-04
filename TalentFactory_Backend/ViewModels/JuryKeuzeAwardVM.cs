@@ -10,6 +10,6 @@ namespace TalentFactory_Backend.ViewModels
     {
         public int AwardId { get; set; }
         public int JuryLidId { get; set; }
-        public List<Nominatie> Nominaties { get; set; }
+        public List<NominatiePositie> NominatiesPositie { get; set; }
     }
 }

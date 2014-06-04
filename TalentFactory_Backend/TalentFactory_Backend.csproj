@@ -49,6 +49,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.95\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
@@ -241,9 +244,11 @@
     <Compile Include="DataAccess\Context\TFContext.cs" />
     <Compile Include="DataAccess\Repositories\GenericRepository.cs" />
     <Compile Include="DataAccess\Repositories\IGenericRepository.cs" />
+    <Compile Include="DataAccess\Repositories\IJuryKeuzeRepository.cs" />
     <Compile Include="DataAccess\Repositories\INieuwsItemRepository.cs" />
     <Compile Include="DataAccess\Repositories\INominatieRepository.cs" />
     <Compile Include="DataAccess\Repositories\ISponsorRepository.cs" />
+    <Compile Include="DataAccess\Repositories\JuryKeuzeRepository.cs" />
     <Compile Include="DataAccess\Repositories\NieuwsItemRepository.cs" />
     <Compile Include="DataAccess\Repositories\NominatieRepository.cs" />
     <Compile Include="DataAccess\Repositories\SponsorRepository.cs" />
@@ -261,11 +266,24 @@
     <Compile Include="Migrations\201406021505267_TFContext.Designer.cs">
       <DependentUpon>201406021505267_TFContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406041241159_TFContextUpdate.cs" />
+    <Compile Include="Migrations\201406041241159_TFContextUpdate.Designer.cs">
+      <DependentUpon>201406041241159_TFContextUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406041248318_TFContextUpdate2.cs" />
+    <Compile Include="Migrations\201406041248318_TFContextUpdate2.Designer.cs">
+      <DependentUpon>201406041248318_TFContextUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406041258261_TFContextUpdate3.cs" />
+    <Compile Include="Migrations\201406041258261_TFContextUpdate3.Designer.cs">
+      <DependentUpon>201406041258261_TFContextUpdate3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Award.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Engines\INominatieEngine.cs" />
     <Compile Include="Models\Engines\NominatieEngine.cs" />
     <Compile Include="Models\FlickrAlbum.cs" />
     <Compile Include="Models\HallOfFame.cs" />
@@ -290,6 +308,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\JuryKeuzeAwardVM.cs" />
+    <Compile Include="ViewModels\NominatiePositie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -378,6 +397,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201406021505267_TFContext.resx">
       <DependentUpon>201406021505267_TFContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406041241159_TFContextUpdate.resx">
+      <DependentUpon>201406041241159_TFContextUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406041248318_TFContextUpdate2.resx">
+      <DependentUpon>201406041248318_TFContextUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406041258261_TFContextUpdate3.resx">
+      <DependentUpon>201406041258261_TFContextUpdate3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

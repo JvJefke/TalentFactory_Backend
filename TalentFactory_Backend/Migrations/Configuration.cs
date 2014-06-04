@@ -1,6 +1,7 @@
 namespace TalentFactory_Backend.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -33,7 +34,7 @@ namespace TalentFactory_Backend.Migrations
          * Twitterfeed  OK
          */
 
-
+            /*
 
             //de setup
             context.Setup.AddOrUpdate(new Setup()
@@ -150,11 +151,18 @@ namespace TalentFactory_Backend.Migrations
 
 
 
-
+            */
             //contactinfo
+
+            List<Contact> cs = context.Contact.ToList<Contact>();
+
+            foreach (Contact c in cs)
+                context.Contact.Remove(c);
+
             context.Contact.AddOrUpdate(new Contact()
             {
                 Straat_Nr = "Graaf Karel de Goedelaan 5",
+                LocatieNaam = "Obee",
                 Postcode = "8500",
                 Gemeente = "Kortrijk",
                 Tel = "056 24 12 90",
@@ -164,8 +172,10 @@ namespace TalentFactory_Backend.Migrations
                 Foto2 = "http://www.howest.be/images/news/normal/google_earth_howest.jpg",
                 Foto3 = "http://www.howest.be/instapcursus/img/gkg.jpg"
             });
+
             context.SaveChanges();
 
+            /*
             //richtingen
             context.Richting.AddOrUpdate(new Richting() { Naam = "Communicatiemanagement (CM)" });
             context.Richting.AddOrUpdate(new Richting() { Naam = "Digital Arts and Entertainment (DAE)" });
@@ -339,8 +349,11 @@ namespace TalentFactory_Backend.Migrations
             context.FlickrAlbum.AddOrUpdate(new FlickrAlbum() { Beschrijving = "clokortrijk/with/7489240656" });
 
             context.SaveChanges();
-
+            */
             //nominaties A1
+
+            context.Nominatie.RemoveRange(context.Nominatie.ToList<Nominatie>());
+
             context.Nominatie.AddOrUpdate(new Nominatie()
             {
                 Voornaam = "Bram",
@@ -359,6 +372,7 @@ namespace TalentFactory_Backend.Migrations
                 GeboorteDatum = new DateTime(1994, 4, 8, 0, 0, 0),
                 Key = "kjdfhgvnjhdsfgvbui",
                 IsActive = true,
+                IsWinnaar = true,
                 Foto = "https://yt3.ggpht.com/-K0TC0xalK1Y/AAAAAAAAAAI/AAAAAAAAAAA/vLp88JFMyFM/s88-c-k-no/photo.jpg"
             });
 
@@ -441,6 +455,7 @@ namespace TalentFactory_Backend.Migrations
                 GeboorteDatum = new DateTime(1995, 8, 28, 0, 0, 0),
                 Key = "ksfjbeqkjbn",
                 IsActive = true,
+                IsWinnaar = true,
                 Foto = "http://photos-a.ak.fbcdn.net/hphotos-ak-ash3/t1.0-0/q71/c0.0.960.562/s480x480/1016131_393844347400645_670788368_n.jpg"
             });
             context.Nominatie.AddOrUpdate(new Nominatie()
@@ -626,9 +641,6 @@ namespace TalentFactory_Backend.Migrations
             //public String Key { get; set; }
             //public Boolean IsActive { get; set; }
             context.SaveChanges();
-
-
-
 
         }
     }

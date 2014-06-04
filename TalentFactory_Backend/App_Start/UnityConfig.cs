@@ -24,7 +24,7 @@ namespace TalentFactory_Backend
             container.RegisterType<IGenericRepository<HallOfFame>, GenericRepository<HallOfFame>>(new HierarchicalLifetimeManager());
             container.RegisterType<IGenericRepository<Home>, GenericRepository<Home>>(new HierarchicalLifetimeManager());
             container.RegisterType<IGenericRepository<JuryLid>, GenericRepository<JuryLid>>(new HierarchicalLifetimeManager());
-            container.RegisterType<IGenericRepository<JuryKeuze>, GenericRepository<JuryKeuze>>(new HierarchicalLifetimeManager());
+            container.RegisterType<IJuryKeuzeRepository, JuryKeuzeRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IGenericRepository<Page>, GenericRepository<Page>>(new HierarchicalLifetimeManager());
             container.RegisterType<INominatieRepository, NominatieRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ISponsorRepository, SponsorRepository>(new HierarchicalLifetimeManager());

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,8 +28,11 @@ namespace TalentFactory_Backend.Models
         public int AwardId { get; set; }
         [ForeignKey("AwardId")]
         public virtual Award Award { get; set; }
+        public Boolean IsWinnaar { get; set; }
         public DateTime GeboorteDatum { get; set; }
+        [JsonIgnore]
         public String Key { get; set; }
+        [JsonIgnore]
         public Boolean IsActive { get; set; }
         public string Foto { get; set; }
     }

@@ -7,7 +7,8 @@ namespace TalentFactory_Backend.Models
 {
     public class Contact
     {
-        public int ID { get; set; }        
+        public int ID { get; set; }
+        public String LocatieNaam { get; set; }
         public String Email { get; set; }
         public String Tel { get; set; }
         public String Straat_Nr { get; set; }

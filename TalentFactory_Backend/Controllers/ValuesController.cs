@@ -282,7 +282,14 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
-        [Route("api/nominaties")]
+        [Route("api/JuryKeuzes")]
+        [HttpPost]
+        public void Post(List<JuryKeuzeAwardVM> VMs)
+        {
+
+        }
+
+        [Route("api/RegistreerNominee")]
         [HttpPost]
         public void Post(List<JuryKeuzeAwardVM> VMs)
         {

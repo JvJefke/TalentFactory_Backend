@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.Models;
 
@@ -25,6 +26,11 @@ namespace TalentFactory_Backend.DataAccess.Repositories
         public List<Sponsor> GetSponsorByType(int id, int iAantal)
         {
             return context.Sponsor.Where(x => x.Type.ID == id).Take(iAantal).ToList<Sponsor>();
+        }
+
+        public List<Sponsor> GetAlleSponsorsMetInclude()
+        {
+            return context.Sponsor.Include(s => s.Type).ToList<Sponsor>();
         }
     }
 }
