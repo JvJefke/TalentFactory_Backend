@@ -105,6 +105,11 @@ namespace TalentFactory_Backend.DataAccess.Services
         {
             return repoNominatie.GetNominatiesByIndex(awardId, startIndex, iAantal);
         }
+
+        public List<Nominatie> GetNominaties()
+        {
+            return repoNominatie.All().ToList<Nominatie>();
+        }
         
     }
 }

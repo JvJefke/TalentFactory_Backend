@@ -7,7 +7,7 @@ using System.Web;
 namespace TalentFactory_Backend.Models
 {
     public class Richting
-    {
+    {   
         [Key]
         public String Naam { get; set; }
     }

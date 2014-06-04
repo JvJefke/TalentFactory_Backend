@@ -6,14 +6,14 @@ namespace TalentFactory_Backend.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class TFContextInit : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
+    public sealed partial class TFContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TFContextInit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TFContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "201406020828435_TFContextInit"; }
+            get { return "201406021505267_TFContext"; }
         }
         
         string IMigrationMetadata.Source

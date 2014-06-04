@@ -251,14 +251,15 @@
     <Compile Include="DataAccess\Services\ContentService.cs" />
     <Compile Include="DataAccess\Services\IContentService.cs" />
     <Compile Include="DataAccess\Services\NominatieService.cs" />
+    <Compile Include="DataAccess\Services\RegistratieService.cs" />
     <Compile Include="DataAccess\UOW\IUOW.cs" />
     <Compile Include="DataAccess\UOW\UOW.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201406020828435_TFContextInit.cs" />
-    <Compile Include="Migrations\201406020828435_TFContextInit.Designer.cs">
-      <DependentUpon>201406020828435_TFContextInit.cs</DependentUpon>
+    <Compile Include="Migrations\201406021505267_TFContext.cs" />
+    <Compile Include="Migrations\201406021505267_TFContext.Designer.cs">
+      <DependentUpon>201406021505267_TFContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -288,6 +289,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\JuryKeuzeAwardVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -368,15 +370,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Dlls\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201406020828435_TFContextInit.resx">
-      <DependentUpon>201406020828435_TFContextInit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201406021505267_TFContext.resx">
+      <DependentUpon>201406021505267_TFContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

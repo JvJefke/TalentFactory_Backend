@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using TalentFactory_Backend.DataAccess.Services;
 using TalentFactory_Backend.Models;
+using TalentFactory_Backend.ViewModels;
 
 namespace TalentFactory_Backend.Controllers
 {
@@ -81,7 +82,7 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
-        [Route("api/nieuwsItem")]
+        [Route("api/nieuwsItem/{id}")]
         [HttpGet]
         public HttpResponseMessage GetNieuwsItem(int id)
         {
@@ -101,7 +102,7 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
-        [Route("api/sponsors")]
+        [Route("api/sponsors/{id}")]
         [HttpGet]
         public HttpResponseMessage GetSponsors(int id)
         {
@@ -223,7 +224,27 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/nominaties")]
         [HttpGet]
-        public HttpResponseMessage GetNominaties(int id)
+        public HttpResponseMessage GetNominaties()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                List<Nominatie> lNominaties = contentService.GetNominaties();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<List<Nominatie>>(lNominaties, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
+        [Route("api/nominaties/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetNominatiesByAward(int id)
         {
             HttpResponseMessage message = null;
 
@@ -241,9 +262,9 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
-        [Route("api/nominaties")]
+        [Route("api/nominaties/{id}")]
         [HttpGet]
-        public HttpResponseMessage GetNominaties(int id, int startIndex, int iAantal)
+        public HttpResponseMessage GetNominatiesByAward(int id, int startIndex, int iAantal)
         {
             HttpResponseMessage message = null;
 
@@ -263,7 +284,7 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/nominaties")]
         [HttpPost]
-        public void Post(List<JuryKeuze> juryKeuzes)
+        public void Post(List<JuryKeuzeAwardVM> VMs)
         {
 
         }

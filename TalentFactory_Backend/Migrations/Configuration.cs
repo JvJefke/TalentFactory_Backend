@@ -16,22 +16,22 @@ namespace TalentFactory_Backend.Migrations
         protected override void Seed(TalentFactory_Backend.DataAccess.Context.TFContext context)
         {
             /*
-            * Award        OK
-            * Contact      OK
-            * Flickralbum
-            * HallOfFame   OK
-            * Home         OK
-            * Jurykeuze
-            * Jurylid      OK
-            * NieuwsItem   OK
-            * Nominaties
-            * Page
-            * Richting     OK
-            * Setup        OK
-            * Sponsor      OK
-            * Sponsortype  OK
-            * Twitterfeed  OK
-            */
+         * Award        OK
+         * Contact      OK
+         * Flickralbum
+         * HallOfFame   OK
+         * Home         OK
+         * Jurykeuze
+         * Jurylid      OK
+         * NieuwsItem   OK
+         * Nominaties
+         * Page
+         * Richting     OK
+         * Setup        OK
+         * Sponsor      OK
+         * Sponsortype  OK
+         * Twitterfeed  OK
+         */
 
 
 
@@ -283,7 +283,7 @@ namespace TalentFactory_Backend.Migrations
 
             context.SaveChanges();
 
-         
+
 
             //Home
             context.Home.AddOrUpdate(new Home()
@@ -339,6 +339,297 @@ namespace TalentFactory_Backend.Migrations
             context.FlickrAlbum.AddOrUpdate(new FlickrAlbum() { Beschrijving = "clokortrijk/with/7489240656" });
 
             context.SaveChanges();
+
+            //nominaties A1
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Bram",
+                Naam = "Regelbrugge",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Canadezenlaan 4",
+                Gemeente = "Adegem",
+                Postcode = "9991",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Cupcake ipsum dolor sit amet biscuit gummies applicake. Apple pie tootsie roll apple pie dragée. Pastry I love candy canes biscuit. Ice cream jelly beans fruitcake. Halvah I love jelly beans soufflé. Unerdwear.com chocolate bar cheesecake candy canes I love pudding. Unerdwear.com sesame snaps I love cake unerdwear.com dessert sweet. Candy canes pudding I love applicake lollipop lemon drops candy cupcake. Candy canes apple pie biscuit pudding I love muffin. Liquorice powder pastry I love tiramisu dessert. Caramels danish gummies tootsie roll applicake sesame snaps carrot cake. Carrot cake wafer marshmallow tiramisu gummi bears.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 1,
+                GeboorteDatum = new DateTime(1994, 4, 8, 0, 0, 0),
+                Key = "kjdfhgvnjhdsfgvbui",
+                IsActive = true,
+                Foto = "https://yt3.ggpht.com/-K0TC0xalK1Y/AAAAAAAAAAI/AAAAAAAAAAA/vLp88JFMyFM/s88-c-k-no/photo.jpg"
+            });
+
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Bernhard",
+                Naam = "Mostrey",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "oude vestingstraat 10",
+                Gemeente = "Kortijk",
+                Postcode = "8500",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Unerdwear.com lemon drops toffee sugar plum fruitcake dessert cotton candy muffin danish. Soufflé chocolate bar I love I love. Bear claw sugar plum I love I love sesame snaps. Lemon drops biscuit muffin lemon drops cookie sweet. Cheesecake jelly-o I love pie croissant I love toffee. Macaroon croissant toffee jelly-o sweet unerdwear.com. Donut jelly soufflé jelly beans macaroon candy cupcake gummies. Jelly beans I love cake croissant sugar plum carrot cake fruitcake muffin. Oat cake cake applicake pudding. Jelly sweet I love donut marzipan topping soufflé jelly beans. Gingerbread I love fruitcake oat cake topping brownie. Sugar plum caramels lemon drops soufflé unerdwear.com dessert gummi bears.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 1,
+                GeboorteDatum = new DateTime(1994, 10, 16, 0, 0, 0),
+                Key = "dzhvqukjefhviukefjhdqnf",
+                IsActive = true,
+                Foto = "http://users.telenet.be/gustav.mostrey/images/2007%20BB%20Marleen%20002.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Jeroen",
+                Naam = "Valcke",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Mariakerksesteenweg 32",
+                Gemeente = "Gent",
+                Postcode = "9000",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Candy jelly beans chocolate chocolate croissant bonbon chocolate bar. Cotton candy lemon drops muffin macaroon muffin caramels apple pie sweet jujubes. Applicake gummi bears caramels I love. Pudding applicake I love pastry muffin gummi bears macaroon. Cotton candy marzipan macaroon. Liquorice marzipan cookie icing danish jelly tart biscuit donut. Dessert wafer brownie candy candy canes. I love jelly-o biscuit jelly beans apple pie soufflé cheesecake danish. Sesame snaps cake chocolate bar. Lollipop liquorice wafer. I love jelly beans sugar plum. Pastry soufflé I love bear claw.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 1,
+                GeboorteDatum = new DateTime(1994, 9, 23, 0, 0, 0),
+                Key = "sdliqvjnfijdhkvnd",
+                IsActive = true,
+                Foto = "http://m.c.lnkd.licdn.com/mpr/pub/image-ILvEX5bZ0Ztbb2nCz1iM1JqoBg_ln2iWISpJ1e3ZBh5DnZS3ILvJxIVZBtAA2pXzsBwV/jeroen-valcke.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Matthias",
+                Naam = "Neuville",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Duivenkot 3",
+                Gemeente = "Zedelgem",
+                Postcode = "8210",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Macaroon pudding fruitcake halvah I love gummies. Oat cake cake jelly beans carrot cake tiramisu jelly beans. Topping cookie I love. Chocolate cake topping chocolate bar I love icing candy. Lemon drops jelly chocolate bar I love tiramisu I love I love liquorice chocolate bar. I love applicake I love croissant sweet I love liquorice fruitcake. Dragée dessert dragée chocolate chocolate bar lemon drops gummi bears bonbon. Cotton candy powder jelly-o I love cupcake gummies marzipan. Lollipop marzipan liquorice tiramisu soufflé. Cake soufflé sesame snaps. Soufflé dessert halvah apple pie. Apple pie cupcake pudding I love.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 1,
+                GeboorteDatum = new DateTime(1994, 9, 9, 0, 0, 0),
+                Key = "difjknekjvsf",
+                IsActive = true,
+                Foto = "https://pbs.twimg.com/profile_images/448809233018912768/PIPX_MYf.png"
+            });
+            //nominaties2
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Fien",
+                Naam = "Van Dorpe",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "straatnaam 6",
+                Gemeente = "Roeselare",
+                Postcode = "8800",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Ergotherapie (ERGO)").FirstOrDefault(),
+                Beschrijving = "Liquorice applicake tart apple pie candy tiramisu jelly-o icing dragée. Halvah brownie I love ice cream sesame snaps. Jelly I love topping croissant jelly beans. I love I love biscuit danish cheesecake sugar plum gummi bears. Caramels chocolate jelly-o cheesecake biscuit jelly-o I love cake pie. Icing jelly beans liquorice cotton candy fruitcake donut. Jelly beans bear claw biscuit brownie dessert donut marshmallow caramels. Tart macaroon cake pie sweet jelly beans I love marshmallow. Dragée I love icing. Sesame snaps ice cream dessert jujubes tart. Jelly-o chocolate cake tiramisu I love I love pie pie cotton candy. I love pie candy canes.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 2,
+                GeboorteDatum = new DateTime(1995, 8, 28, 0, 0, 0),
+                Key = "ksfjbeqkjbn",
+                IsActive = true,
+                Foto = "http://photos-a.ak.fbcdn.net/hphotos-ak-ash3/t1.0-0/q71/c0.0.960.562/s480x480/1016131_393844347400645_670788368_n.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Jason",
+                Naam = "Voet",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "duts 46",
+                Gemeente = "Brugge",
+                Postcode = "8000",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Digital Arts and Entertainment (DAE)").FirstOrDefault(),
+                Beschrijving = "Cupcake ipsum dolor sit amet lollipop jelly beans caramels marzipan. Brownie jelly gingerbread chocolate bar croissant ice cream muffin macaroon. Chupa chups biscuit jelly chocolate bar sesame snaps liquorice I love lollipop. Gummies croissant pastry I love lollipop. Cheesecake carrot cake I love cotton candy biscuit I love soufflé tootsie roll cookie. Apple pie cookie chocolate biscuit I love brownie jelly-o apple pie icing. Jelly beans bonbon bear claw pastry I love dragée liquorice. Brownie I love jelly beans I love bear claw tart carrot cake dragée. Soufflé macaroon candy biscuit chocolate cake I love gummies croissant icing. Toffee dragée cheesecake tootsie roll powder. Danish applicake topping wafer sugar plum. I love bear claw cake liquorice chupa chups marzipan. Icing brownie jelly beans chocolate cake. Sweet candy canes cupcake I love sesame snaps croissant.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 2,
+                GeboorteDatum = new DateTime(1995, 5, 15, 0, 0, 0),
+                Key = "sfglvkdnfbv",
+                IsActive = true,
+                Foto = "http://m.c.lnkd.licdn.com/mpr/pub/image-5pYFCOC6V9v-tVaeHUDAThCKACIcB7TH-vYAODU6snDQbglJspYAfAsV52tQO8sJ3ax/jason-voet.jpg"
+            });
+
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Lisa",
+                Naam = "Dequeker",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Zwevegemsestraat 46",
+                Gemeente = "Kortijk",
+                Postcode = "8500",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Communicatiemanagement (CM)").FirstOrDefault(),
+                Beschrijving = "Gummi bears cupcake sugar plum applicake I love tart powder brownie donut. Icing oat cake jelly. Jelly beans cookie lollipop soufflé cookie I love bonbon cheesecake chocolate bar. Sugar plum ice cream bear claw biscuit lemon drops. Ice cream gummies muffin sugar plum sesame snaps jujubes jujubes. Halvah ice cream icing toffee sesame snaps sweet cotton candy lemon drops croissant. Tiramisu icing icing tart. Gingerbread gingerbread unerdwear.com chocolate cake topping. Cupcake donut I love pie unerdwear.com. Chocolate bar jelly apple pie sesame snaps dragée dragée biscuit I love I love. Muffin cupcake pie donut I love pastry. I love pie I love macaroon jelly beans cake I love cake dessert. Pie powder cake liquorice gummi bears candy canes. I love tootsie roll chupa chups oat cake carrot cake sweet soufflé chocolate cake bonbon.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 2,
+                GeboorteDatum = new DateTime(1995, 5, 5, 0, 0, 0),
+                Key = "fgdiuhksjnfivkj",
+                IsActive = true,
+                Foto = "http://www.merkur-online.de/bilder/2009/05/21/309020/691084670-241757_1_mona_12842056_onlinebild-3K09.jpg"
+            });
+            //nominaties3
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Brecht",
+                Naam = "Tourlousse",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Andere straat 69",
+                Gemeente = "Ieper",
+                Postcode = "8900",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Marshmallow sesame snaps wafer toffee soufflé donut. Danish unerdwear.com pie toffee topping gummies sweet. Dessert cake I love sweet jelly toffee. Gingerbread gummies jelly dessert chocolate bar. I love cupcake donut cake. Sesame snaps jelly I love sweet roll marzipan halvah sesame snaps donut sweet. Donut gummies carrot cake. Cotton candy caramels lemon drops danish gingerbread. Cake candy canes gummies. Tart tart jelly-o cookie oat cake oat cake soufflé chupa chups. Jelly unerdwear.com oat cake marshmallow jelly-o cake I love. I love icing sweet roll I love marzipan jelly beans candy danish cake. I love chocolate bar marzipan topping soufflé oat cake jelly gummies tiramisu. Danish jelly beans jelly pastry chocolate bar sweet.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 3,
+                GeboorteDatum = new DateTime(1994, 2, 19, 0, 0, 0),
+                Key = "sdlknvsdjklnvjkdfjkvbx",
+                IsActive = true,
+                Foto = "https://lh6.googleusercontent.com/-LQsUpkPa0MM/AAAAAAAAAAI/AAAAAAAAACc/Z3zvOrSs5l8/photo.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Laura",
+                Naam = "Lamont",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Andere straat 69",
+                Gemeente = "Ieper",
+                Postcode = "8900",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Toerisme en recreatiemanagement (TRM)").FirstOrDefault(),
+                Beschrijving = "Cupcake marshmallow ice cream fruitcake biscuit dragée powder icing. Tiramisu tart sweet muffin ice cream. I love jelly donut. Jelly-o caramels bear claw cookie caramels chocolate cake tootsie roll gingerbread. Cupcake jujubes I love. Candy caramels liquorice chupa chups cookie ice cream jujubes. Gummies pastry sesame snaps I love I love tootsie roll apple pie. I love gingerbread cookie topping sweet roll I love pudding. Gingerbread marzipan I love sesame snaps lemon drops sweet marzipan. Toffee cake jelly beans I love I love I love. Pudding applicake soufflé jelly dragée cake. Toffee applicake wafer cheesecake tiramisu. Jujubes soufflé chocolate cake tootsie roll soufflé wafer I love. I love carrot cake I love jelly beans halvah topping gummi bears.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 3,
+                GeboorteDatum = new DateTime(1993, 8, 14, 0, 0, 0),
+                Key = "sdvscvfxcv",
+                IsActive = true,
+                Foto = "http://www.rafvanderdonckt.be/genea/foto/huwelijkGeorges+Paula.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Sander",
+                Naam = "De la Marche",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Minister tacklaan 1",
+                Gemeente = "Kortrijk",
+                Postcode = "8500",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "New Media and Communication Technologie (NMCT)").FirstOrDefault(),
+                Beschrijving = "Cookie soufflé danish. Cookie powder chocolate cake. Oat cake I love jujubes powder candy canes jelly-o tiramisu caramels. Candy candy cookie dragée wafer sweet roll jujubes. Gingerbread carrot cake caramels biscuit pastry. Oat cake powder cake lemon drops tart. Jelly-o chupa chups gummies muffin I love bear claw gummies. Muffin dessert bear claw oat cake dessert. Sesame snaps jelly beans I love chocolate I love chocolate bar. Brownie lollipop soufflé macaroon. Halvah sesame snaps tart gummies I love marshmallow lollipop. I love muffin jelly-o jelly chocolate cupcake wafer chocolate I love. Icing macaroon topping candy canes I love marshmallow ice cream. Danish dessert tart cotton candy.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "man",
+                AwardId = 4,
+                GeboorteDatum = new DateTime(1993, 3, 3, 0, 0, 0),
+                Key = "fqjvbvkqbdf,",
+                IsActive = true,
+                Foto = "http://www.joe-english.be/img/leiding/sander.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Hannah",
+                Naam = "Van Hove",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Kendestraatniet 3",
+                Gemeente = "Havere",
+                Postcode = "9000",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Journalistiek (JRN)").FirstOrDefault(),
+                Beschrijving = "Muffin chocolate icing oat cake cookie lemon drops applicake jelly-o. Gummies applicake sweet roll brownie halvah gummies gingerbread. Gingerbread pudding jujubes applicake wafer toffee. Topping lemon drops candy cookie dragée toffee pudding muffin. Fruitcake cookie pie gummies muffin pudding ice cream. Topping bear claw sweet roll lemon drops sugar plum pie dessert dessert. Chupa chups applicake brownie danish wafer marzipan tootsie roll fruitcake. Icing liquorice liquorice applicake carrot cake tootsie roll. Lollipop tart jujubes halvah.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 4,
+                GeboorteDatum = new DateTime(1995, 11, 7, 0, 0, 0),
+                Key = "sfdbsfgbfg,",
+                IsActive = true,
+                Foto = "http://cdn.bandmix.co.uk/bandmix_uk/media/10/10417/141512-p.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Lindsay",
+                Naam = "Van Basselaere",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Wilgenpark 5",
+                Gemeente = "Eeklo",
+                Postcode = "9991",
+                Land = "België",
+                Richting = context.Richting.Where(x => x.Naam == "Office Management (OM)").FirstOrDefault(),
+                Beschrijving = "Biscuit sweet roll icing unerdwear.com jelly beans jelly beans dragée bonbon croissant. Sesame snaps caramels fruitcake croissant lollipop bear claw dragée. Marshmallow chocolate cake halvah brownie wafer sugar plum. Soufflé croissant chocolate cake fruitcake sweet roll chocolate cake. Dessert topping apple pie pudding candy canes chocolate bar bonbon. Powder macaroon cupcake chocolate chocolate bar dragée gummies candy ice cream. Sesame snaps brownie bonbon tart cupcake unerdwear.com sugar plum pudding gingerbread. Chupa chups bonbon pie donut dessert caramels. Wafer cookie jujubes chupa chups sugar plum.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 4,
+                GeboorteDatum = new DateTime(1996, 12, 16, 0, 0, 0),
+                Key = "sdvddfv,",
+                IsActive = true,
+                Foto = "http://m.c.lnkd.licdn.com/mpr/pub/image-GNJ7b-QfazanPoHbl2uhS7l9QVVSZVIC-NOCSDCRQ6WGEs_dGNJCFG0fQyh-vIWeJV88/lindsay-van-basselaere.jpg"
+            });
+            context.Nominatie.AddOrUpdate(new Nominatie()
+            {
+                Voornaam = "Emma",
+                Naam = "Watson",
+                Email = "bramregelbrugge@gmail.com",
+                Tel = "0479837774",
+                Straat_Nr = "Engeland 4",
+                Gemeente = "London",
+                Postcode = "1000",
+                Land = "UK",
+                Richting = context.Richting.Where(x => x.Naam == "Office Management (OM)").FirstOrDefault(),
+                Beschrijving = "Soufflé ice cream muffin lollipop cheesecake cupcake. Bonbon fruitcake tootsie roll soufflé danish macaroon brownie. Gummies danish marshmallow biscuit lollipop gingerbread jelly brownie chupa chups. Cheesecake tootsie roll bonbon icing chocolate chocolate oat cake. Tootsie roll lollipop soufflé wafer pudding pudding lollipop. Ice cream soufflé pastry sugar plum. Cake gummi bears soufflé bear claw gummi bears toffee chocolate cake. Chocolate cake brownie danish caramels. Croissant gingerbread biscuit cheesecake jujubes applicake. Halvah tiramisu candy canes gummi bears lollipop applicake soufflé.",
+                ExtraLinks = "https://www.youtube.com/",
+                Geslacht = "vrouw",
+                AwardId = 4,
+                GeboorteDatum = new DateTime(1900, 4, 15, 0, 0, 0),
+                Key = "fdgsdjygs,",
+                IsActive = true,
+                Foto = "http://www.miley-cyruss.com/wp-content/uploads/2014/05/emma-watson-3.jpg"
+            });
+
+            //public int ID { get; set; }
+            //public String Voornaam { get; set; }
+            //public String Naam { get; set; }
+            //public String Email { get; set; }
+            //public String Tel { get; set; }
+            //public String Straat_Nr { get; set; }
+            //public String Gemeente { get; set; }
+            //public String Postcode { get; set; }
+            //public String Land { get; set; }
+            //public String RichtingId { get; set; }
+            //public virtual Richting Richting { get; set; }
+            //public String Beschrijving { get; set; }
+            //public String ExtraLinks { get; set; }
+            //public String Geslacht { get; set; }
+            //public int AwardId { get; set; }
+            //public virtual Award Award { get; set; }
+            //public DateTime GeboorteDatum { get; set; }
+            //public String Key { get; set; }
+            //public Boolean IsActive { get; set; }
+            context.SaveChanges();
+
+
+
+
         }
     }
 }

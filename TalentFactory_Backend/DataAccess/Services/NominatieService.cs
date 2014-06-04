@@ -6,6 +6,7 @@ using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.DataAccess.Repositories;
 using TalentFactory_Backend.DataAccess.UOW;
 using TalentFactory_Backend.Models;
+using TalentFactory_Backend.ViewModels;
 
 namespace TalentFactory_Backend.DataAccess.Services
 {
@@ -29,9 +30,9 @@ namespace TalentFactory_Backend.DataAccess.Services
             this.uow = uow;           
         }
 
-        public void PostJuryKeuze(List<JuryKeuze> keuzes)
+        public void PostJuryKeuze(List<JuryKeuzeAwardVM> VMs)
         {
-                      
+                     
         }
     }
 }

@@ -19,5 +19,6 @@ namespace TalentFactory_Backend.DataAccess.Services
         List<Award> GetAwards();
         List<Nominatie> GetNominatiesByAward(int awardId);
         List<Nominatie> GetNominatiesByAward(int awardId, int startIndex, int iAantal);
+        List<Nominatie> GetNominaties();
     }
 }

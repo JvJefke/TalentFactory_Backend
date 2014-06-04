@@ -3,7 +3,7 @@ namespace TalentFactory_Backend.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TFContextInit : DbMigration
+    public partial class TFContext : DbMigration
     {
         public override void Up()
         {
@@ -88,8 +88,8 @@ namespace TalentFactory_Backend.Migrations
                 .PrimaryKey(t => new { t.NominatieID, t.JuryLidId })
                 .ForeignKey("dbo.JuryLids", t => t.JuryLidId, cascadeDelete: true)
                 .ForeignKey("dbo.Nominaties", t => t.NominatieID, cascadeDelete: true)
-                .Index(t => t.JuryLidId)
-                .Index(t => t.NominatieID);
+                .Index(t => t.NominatieID)
+                .Index(t => t.JuryLidId);
             
             CreateTable(
                 "dbo.JuryLids",
@@ -112,14 +112,14 @@ namespace TalentFactory_Backend.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Voornaam = c.String(),
-                        Naam = c.String(maxLength: 128),
+                        Naam = c.String(),
                         Email = c.String(),
                         Tel = c.String(),
                         Straat_Nr = c.String(),
                         Gemeente = c.String(),
                         Postcode = c.String(),
                         Land = c.String(),
-                        RichtingId = c.String(),
+                        RichtingId = c.String(maxLength: 128),
                         Beschrijving = c.String(),
                         ExtraLinks = c.String(),
                         Geslacht = c.String(),
@@ -127,12 +127,13 @@ namespace TalentFactory_Backend.Migrations
                         GeboorteDatum = c.DateTime(nullable: false),
                         Key = c.String(),
                         IsActive = c.Boolean(nullable: false),
+                        Foto = c.String(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Awards", t => t.AwardId, cascadeDelete: true)
-                .ForeignKey("dbo.Richtings", t => t.Naam)
-                .Index(t => t.AwardId)
-                .Index(t => t.Naam);
+                .ForeignKey("dbo.Richtings", t => t.RichtingId)
+                .Index(t => t.RichtingId)
+                .Index(t => t.AwardId);
             
             CreateTable(
                 "dbo.Richtings",
@@ -212,16 +213,16 @@ namespace TalentFactory_Backend.Migrations
         {
             DropForeignKey("dbo.Sponsors", "SponsorTypeID", "dbo.SponsorTypes");
             DropForeignKey("dbo.JuryKeuzes", "NominatieID", "dbo.Nominaties");
-            DropForeignKey("dbo.Nominaties", "Naam", "dbo.Richtings");
+            DropForeignKey("dbo.Nominaties", "RichtingId", "dbo.Richtings");
             DropForeignKey("dbo.Nominaties", "AwardId", "dbo.Awards");
             DropForeignKey("dbo.JuryKeuzes", "JuryLidId", "dbo.JuryLids");
             DropForeignKey("dbo.TwitterFeeds", "Home_ID", "dbo.Homes");
             DropForeignKey("dbo.FlickrAlbums", "Home_ID", "dbo.Homes");
             DropIndex("dbo.Sponsors", new[] { "SponsorTypeID" });
-            DropIndex("dbo.JuryKeuzes", new[] { "NominatieID" });
-            DropIndex("dbo.Nominaties", new[] { "Naam" });
             DropIndex("dbo.Nominaties", new[] { "AwardId" });
+            DropIndex("dbo.Nominaties", new[] { "RichtingId" });
             DropIndex("dbo.JuryKeuzes", new[] { "JuryLidId" });
+            DropIndex("dbo.JuryKeuzes", new[] { "NominatieID" });
             DropIndex("dbo.TwitterFeeds", new[] { "Home_ID" });
             DropIndex("dbo.FlickrAlbums", new[] { "Home_ID" });
             DropTable("dbo.SponsorTypes");
