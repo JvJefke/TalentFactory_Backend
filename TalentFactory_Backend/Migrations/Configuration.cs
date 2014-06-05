@@ -6,6 +6,7 @@ namespace TalentFactory_Backend.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using TalentFactory_Backend.Models;
+    using EntityFramework.Extensions;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TalentFactory_Backend.DataAccess.Context.TFContext>
     {
@@ -641,6 +642,8 @@ namespace TalentFactory_Backend.Migrations
             //public String Key { get; set; }
             //public Boolean IsActive { get; set; }
             context.SaveChanges();
+
+            
 
         }
     }

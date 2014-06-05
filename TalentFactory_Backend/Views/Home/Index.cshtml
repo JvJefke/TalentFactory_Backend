@@ -22,3 +22,47 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<script>
+    var json = [{
+        AwardId: 1,
+        JuryLidId: 1,
+        NominatiesPositie: {
+            NominatieId: 1,
+            Positie: 2
+        }
+    }]/*
+    , {
+        AwardId: 1,
+        JuryLidId: 1,
+        NominatiesPositie: {
+            NominatieId: 2,
+            Positie: 1
+        }
+    }, {
+        AwardId: 1,
+        JuryLidId: 1,
+        NominatiesPositie: {
+            NominatieId: 3,
+            Positie: 3
+        }
+    }, {
+        AwardId: 2,
+        JuryLidId: 1,
+        NominatiesPositie: {
+            NominatieId: 1,
+            Positie: 2
+        }
+    }];*/
+
+    json = JSON.stringify(json);
+
+    $.ajax({
+        url: "api/JuryKeuzes",
+        type: "POST",
+        data: { model: json },
+        dataType: "json"
+    }).done(function () {
+        alert("completed");
+    });
+</script>

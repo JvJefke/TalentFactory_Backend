@@ -7,7 +7,7 @@ namespace TalentFactory_Backend.ViewModels
 {
     public class NominatiePositie
     {
-        public int NominatieID { get; set; }
+        public int NominatieId { get; set; }
         public int Positie { get; set; }
     }
 }

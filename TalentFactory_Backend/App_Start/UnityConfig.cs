@@ -8,6 +8,7 @@ using TalentFactory_Backend.Models;
 using System.Web.Http;
 using TalentFactory_Backend.DataAccess.UOW;
 using TalentFactory_Backend.DataAccess.Services;
+using TalentFactory_Backend.Models.Engines;
 
 namespace TalentFactory_Backend
 {
@@ -32,6 +33,8 @@ namespace TalentFactory_Backend
             container.RegisterType<IUOW, UOW>(new HierarchicalLifetimeManager());
             container.RegisterType<IContentService, ContentService>(new HierarchicalLifetimeManager());
             container.RegisterType<IGenericRepository<FlickrAlbum>, GenericRepository<FlickrAlbum>>(new HierarchicalLifetimeManager());
+            container.RegisterType<INominatieService, NominatieService>(new HierarchicalLifetimeManager());
+            container.RegisterType<INominatieEngine, NominatieEngine>(new HierarchicalLifetimeManager());
 
             DependencyResolver.SetResolver(new Unity.Mvc5.UnityDependencyResolver(container)); 
             GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);

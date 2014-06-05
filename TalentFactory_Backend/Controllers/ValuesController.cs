@@ -14,11 +14,12 @@ namespace TalentFactory_Backend.Controllers
     public class ValuesController : ApiController
     {
         private IContentService contentService = null;
-        // private NominatieService nominatieService;
+        private INominatieService nominatieService;
 
         public ValuesController() {}
-        public ValuesController(IContentService contentService) {
+        public ValuesController(IContentService contentService, INominatieService nominatieService) {
             this.contentService = contentService;
+            this.nominatieService = nominatieService;
         }
 
         // GET api/values
@@ -202,6 +203,26 @@ namespace TalentFactory_Backend.Controllers
             return message;
         }
 
+        [Route("api/AlgemeenApp")]
+        [HttpGet]
+        public HttpResponseMessage GetAlgemeenApp()
+        {
+            HttpResponseMessage message = null;
+
+            try
+            {
+                ContactAppVM vm = contentService.GetContactAppVM();
+                message = new HttpResponseMessage(HttpStatusCode.OK);
+                message.Content = new ObjectContent<ContactAppVM>(vm, Configuration.Formatters[0], "application/json");
+            }
+            catch (Exception ex)
+            {
+                message = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
+            return message;
+        }
+
         [Route("api/awards")]
         [HttpGet]
         public HttpResponseMessage GetAwards()
@@ -284,14 +305,14 @@ namespace TalentFactory_Backend.Controllers
 
         [Route("api/JuryKeuzes")]
         [HttpPost]
-        public void Post(List<JuryKeuzeAwardVM> VMs)
+        public void PostJuryKeuze(JuryKeuzeAwardVM model)
         {
-
+            JuryKeuzeAwardVM vms = model;
         }
 
         [Route("api/RegistreerNominee")]
         [HttpPost]
-        public void Post(List<JuryKeuzeAwardVM> VMs)
+        public void PostRegistreerNominee(object VMs)
         {
 
         }

@@ -6,6 +6,7 @@ using TalentFactory_Backend.DataAccess.Context;
 using TalentFactory_Backend.DataAccess.Repositories;
 using TalentFactory_Backend.DataAccess.UOW;
 using TalentFactory_Backend.Models;
+using TalentFactory_Backend.ViewModels;
 
 namespace TalentFactory_Backend.DataAccess.Services
 {
@@ -22,13 +23,13 @@ namespace TalentFactory_Backend.DataAccess.Services
         private IGenericRepository<Home> repoHome = null;
         private IGenericRepository<JuryLid> repoJuryLid = null;
         private IGenericRepository<Page> repoPage = null;
-        private IGenericRepository<JuryKeuze> repoJuryKeuze = null;
+        private IJuryKeuzeRepository repoJuryKeuze = null;
         private IGenericRepository<FlickrAlbum> repoFlickr = null;
         private IUOW uow;
 
         public ContentService(TFContext context, IGenericRepository<Award> repoAward, INominatieRepository repoNominatie, ISponsorRepository repoSponsor, INieuwsItemRepository repoNieuwsItem, IGenericRepository<Setup> repoSetup,
          IGenericRepository<Contact> repoContact ,  IGenericRepository<HallOfFame> repoHallOfFame ,  IGenericRepository<Home> repoHome ,  IGenericRepository<JuryLid> repoJuryLid , IGenericRepository<Page> repoPage ,
-        IGenericRepository<JuryKeuze> repoJuryKeuze, IGenericRepository<FlickrAlbum> repoFlickr, IUOW uow)
+        IJuryKeuzeRepository repoJuryKeuze, IGenericRepository<FlickrAlbum> repoFlickr, IUOW uow)
         {
             this.context = context;
             this.repoAward = repoAward;
@@ -109,6 +110,16 @@ namespace TalentFactory_Backend.DataAccess.Services
         public List<Nominatie> GetNominaties()
         {
             return repoNominatie.All().ToList<Nominatie>();
+        }
+
+        public ContactAppVM GetContactAppVM()
+        {
+            ContactAppVM vm = new ContactAppVM();
+
+            vm.Contact = GetContact();
+            vm.setup = repoSetup.All().FirstOrDefault();
+
+            return vm;
         }
         
     }

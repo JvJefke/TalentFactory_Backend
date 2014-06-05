@@ -254,7 +254,9 @@
     <Compile Include="DataAccess\Repositories\SponsorRepository.cs" />
     <Compile Include="DataAccess\Services\CMSService.cs" />
     <Compile Include="DataAccess\Services\ContentService.cs" />
+    <Compile Include="DataAccess\Services\FelicitatieService.cs" />
     <Compile Include="DataAccess\Services\IContentService.cs" />
+    <Compile Include="DataAccess\Services\INominatieService.cs" />
     <Compile Include="DataAccess\Services\NominatieService.cs" />
     <Compile Include="DataAccess\Services\RegistratieService.cs" />
     <Compile Include="DataAccess\UOW\IUOW.cs" />
@@ -278,6 +280,10 @@
     <Compile Include="Migrations\201406041258261_TFContextUpdate3.Designer.cs">
       <DependentUpon>201406041258261_TFContextUpdate3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406041513147_Update4.cs" />
+    <Compile Include="Migrations\201406041513147_Update4.Designer.cs">
+      <DependentUpon>201406041513147_Update4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,6 +291,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Engines\INominatieEngine.cs" />
     <Compile Include="Models\Engines\NominatieEngine.cs" />
+    <Compile Include="Models\Felicitatie.cs" />
     <Compile Include="Models\FlickrAlbum.cs" />
     <Compile Include="Models\HallOfFame.cs" />
     <Compile Include="Models\Home.cs" />
@@ -307,6 +314,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ContactAppVM.cs" />
     <Compile Include="ViewModels\JuryKeuzeAwardVM.cs" />
     <Compile Include="ViewModels\NominatiePositie.cs" />
   </ItemGroup>
@@ -406,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406041258261_TFContextUpdate3.resx">
       <DependentUpon>201406041258261_TFContextUpdate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406041513147_Update4.resx">
+      <DependentUpon>201406041513147_Update4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

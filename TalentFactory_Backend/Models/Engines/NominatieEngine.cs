@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using TalentFactory_Backend.DataAccess.Repositories;
@@ -18,7 +19,7 @@ namespace TalentFactory_Backend.Models.Engines
             {
                 foreach(NominatiePositie n in vm.NominatiesPositie)
                 {
-                    lResult.Add(new JuryKeuze(){JuryLidId = vm.JuryLidId, NominatieID = n.NominatieID, Positie = n.Positie});
+                    lResult.Add(new JuryKeuze(){JuryLidId = vm.JuryLidId, NominatieID = n.NominatieId, Positie = n.Positie});
                 }
             }
 

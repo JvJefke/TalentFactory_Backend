@@ -11,7 +11,7 @@ using TalentFactory_Backend.ViewModels;
 
 namespace TalentFactory_Backend.DataAccess.Services
 {
-    public class NominatieService
+    public class NominatieService : TalentFactory_Backend.DataAccess.Services.INominatieService
     {
         private TFContext context = null;
         private IGenericRepository<Award> repoAward = null;
@@ -43,10 +43,10 @@ namespace TalentFactory_Backend.DataAccess.Services
             AddJuryKeuzes(lJuryKeuzes);            
         }
 
-        public void AddNominee(Nominatie n)
+        /*public void AddNominee(Nominatie n)
         {
             repoNominatie.Insert(n);
-        }
+        }*/
 
         private void AddJuryKeuzes(List<JuryKeuze> lJuryKeuzes)
         {

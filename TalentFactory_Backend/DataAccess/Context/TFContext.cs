@@ -23,7 +23,8 @@ namespace TalentFactory_Backend.DataAccess.Context
         public DbSet<Setup> Setup { get; set; }
         public DbSet<Sponsor> Sponsor { get; set; }
         public DbSet<SponsorType> SponsorType { get; set; }
-        public DbSet<TwitterFeed> TwitterFeed { get; set; }        
+        public DbSet<TwitterFeed> TwitterFeed { get; set; }
+        public DbSet<Felicitatie> Felicitatie { get; set; }
         
     }
 }
